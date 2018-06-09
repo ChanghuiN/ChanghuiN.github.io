@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta content="author" name="ChanghuiN"><meta name="keywords" content="ChanghuiN,hchstudio,System方法总结,Java源码分析"><meta name="description" content="I-team团队技术博客"><title>System方法总结 | I-team</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-104210871-1','auto');ga('send','pageview');</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">System方法总结</h1><a id="logo" href="/.">I-team</a><p class="description">专注成就未来</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">System方法总结</h1><div class="post-meta">Sep 12, 2016<span> | </span><span class="author">ChanghuiN</span><span> | </span><span class="category"><a href="/categories/Java/">Java</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="clear"><div id="toc" class="toc-article"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#成员属性"><span class="toc-number">1.</span> <span class="toc-text">成员属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#err"><span class="toc-number">1.1.</span> <span class="toc-text">err</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in"><span class="toc-number">1.2.</span> <span class="toc-text">in</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#out"><span class="toc-number">1.3.</span> <span class="toc-text">out</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员方法"><span class="toc-number">2.</span> <span class="toc-text">成员方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#arraycopy"><span class="toc-number">2.1.</span> <span class="toc-text">arraycopy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clearProperty"><span class="toc-number">2.2.</span> <span class="toc-text">clearProperty</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console"><span class="toc-number">2.3.</span> <span class="toc-text">console</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#currentTimeMillis"><span class="toc-number">2.4.</span> <span class="toc-text">currentTimeMillis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exit"><span class="toc-number">2.5.</span> <span class="toc-text">exit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gc"><span class="toc-number">2.6.</span> <span class="toc-text">gc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getProperties"><span class="toc-number">2.7.</span> <span class="toc-text">getProperties</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getSecurityManager"><span class="toc-number">2.8.</span> <span class="toc-text">getSecurityManager</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getenv"><span class="toc-number">2.9.</span> <span class="toc-text">getenv()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nanoTime"><span class="toc-number">2.10.</span> <span class="toc-text">nanoTime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#runFinalization"><span class="toc-number">2.11.</span> <span class="toc-text">runFinalization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#runFinalizersOnExit"><span class="toc-number">2.12.</span> <span class="toc-text">runFinalizersOnExit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setErr"><span class="toc-number">2.13.</span> <span class="toc-text">setErr</span></a></li></ol></li></ol></div></div><div class="post-content"><p>最近在研究Android源码，突然看到有很多和System有关，什么System.arraycopy、System.nanoTime()，所以专门花时间看了一下这个类。<br>System类代表系统，系统级的很多属性和控制方法都放置在该类的内部。该类位于java.lang包。<br>由于该类的构造函数问private，所以它不能被实例化，其中的方法大多使用static关键字修饰。如下为具体方法分析：  </p>
+<h2 id="成员属性"><a href="#成员属性" class="headerlink" title="成员属性"></a>成员属性</h2><h3 id="err"><a href="#err" class="headerlink" title="err"></a>err</h3><p>实现：public static final PrintStream err<br>介绍：“标准”错误输出流。  </p>
+<h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><p>实现：public static final InputStream in<br>介绍：“标准”输入流。</p>
+<h3 id="out"><a href="#out" class="headerlink" title="out"></a>out</h3><p>实现：public static final PrintStream<br>介绍：“标准”输出流。  </p>
+<h2 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h2><h3 id="arraycopy"><a href="#arraycopy" class="headerlink" title="arraycopy"></a>arraycopy</h3><p>方法：void arraycopy (Object src, int srcPos, Object dest, int destPos, int length)<br>功能：把数组资源从给定的起始位置复制一定的长度到另一个数组对象的给定位置。  </p>
+<table>
+<thead>
+<tr>
+<th>参数说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>源数组对象</td>
+</tr>
+<tr>
+<td>srcPos</td>
+<td>源数组对象需要复制的其实位置</td>
+</tr>
+<tr>
+<td>dest</td>
+<td>目的数组对象</td>
+</tr>
+<tr>
+<td>destPos</td>
+<td>目的数组对象起始位置</td>
+</tr>
+<tr>
+<td>length</td>
+<td>需要复制数组的长度</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>异常说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IndexOutOfBoundsException</td>
+<td>数组越界异常</td>
+</tr>
+<tr>
+<td>ArrayStoreException</td>
+<td>源数组类型与目的数组类型匹配错误</td>
+</tr>
+<tr>
+<td>dest</td>
+<td>目的数组对象</td>
+</tr>
+<tr>
+<td>destPos</td>
+<td>目的数组对象起始位置</td>
+</tr>
+<tr>
+<td>NullPointerException</td>
+<td>空指针异常</td>
+</tr>
+</tbody>
+</table>
+<h3 id="clearProperty"><a href="#clearProperty" class="headerlink" title="clearProperty"></a>clearProperty</h3><p>方法：String clearProperty (String key)<br>功能：清除系统对应key的属性  </p>
+<table>
+<thead>
+<tr>
+<th>参数说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>系统属性key</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>返回说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td>返回系统属性key对应的值，如果没有该属性则返回null</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Throws</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NullPointerException</td>
+<td>如果key为null</td>
+</tr>
+<tr>
+<td>IllegalArgumentException</td>
+<td>如果key为empty</td>
+</tr>
+</tbody>
+</table>
+<p>参见：<br><a href="#getProperty">getProperty(String)</a><br><a href="#setProperty">setProperty(String, String)</a></p>
+<h3 id="console"><a href="#console" class="headerlink" title="console"></a>console</h3><p>方法：Console console ()<br>功能：返回当前java虚拟机的控制台。  </p>
+<table>
+<thead>
+<tr>
+<th>返回说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td>Console控制台</td>
+</tr>
+</tbody>
+</table>
+<h3 id="currentTimeMillis"><a href="#currentTimeMillis" class="headerlink" title="currentTimeMillis"></a>currentTimeMillis</h3><p>方法：long currentTimeMillis ()<br>功能：返回当前时间的毫秒数，精度取决于操作系统。  </p>
+<table>
+<thead>
+<tr>
+<th>返回说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>long</td>
+<td>从1970年1月1日(UTC)到当前的毫秒数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exit"><a href="#exit" class="headerlink" title="exit"></a>exit</h3><p>方法：void exit (int status)<br>功能：终止当前正在运行的Java虚拟机。参数作为状态代码,按照惯例,一个非零状态码表示异常终止。相当于调用 Runtime.getRuntime().exit(n)。  </p>
+<table>
+<thead>
+<tr>
+<th>参数说明</th>
+<th>　</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>退出状态参数　</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>异常说明　</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SecurityException</td>
+<td>如果安全管理器存在及其checkExit方法不允许退出与指定的地位。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gc"><a href="#gc" class="headerlink" title="gc"></a>gc</h3><p>方法：void gc ()<br>功能：垃圾回收器运行。调用gc方法表明,Java虚拟机消耗的努力向回收未使用的对象,使他们目前占用的内存用于快速重用。当控制返回从方法调用时,Java虚拟机做出了最大的努力从所有丢弃对象回收空间。<br>此方法类似　Runtime.getRuntime().gc()  </p>
+<h3 id="getProperties"><a href="#getProperties" class="headerlink" title="getProperties"></a>getProperties</h3><p>方法：Properties getProperties ()<br>功能：获取当前系统所有属性。<br>类似方法：</p>
+<ul>
+<li>String getProperty (String key, String def)</li>
+<li>String getProperty (String key)</li>
+</ul>
+<h3 id="getSecurityManager"><a href="#getSecurityManager" class="headerlink" title="getSecurityManager"></a>getSecurityManager</h3><p>方法：SecurityManager getSecurityManager ()<br>功能：返回安全管理器，在Android中总是返回null。  </p>
+<h3 id="getenv"><a href="#getenv" class="headerlink" title="getenv()"></a>getenv()</h3><p>方法：String getenv (String name)<br>功能：以Map格式返回系统的环境变量。<br>类似方法：</p>
+<ul>
+<li>getenv(String)  </li>
+</ul>
+<p>#…</p>
+<h3 id="nanoTime"><a href="#nanoTime" class="headerlink" title="nanoTime"></a>nanoTime</h3><p>方法：long nanoTime ()<br>功能：返回正在运行的java虚拟机的最高分辨率时间，单位为纳米。通常用来判断运行时间。  </p>
+<h3 id="runFinalization"><a href="#runFinalization" class="headerlink" title="runFinalization"></a>runFinalization</h3><p>方法：void runFinalization ()<br>功能：运行对象的finalize方法，等待结束对象。<br>类似方法：</p>
+<ul>
+<li>Runtime.getRuntime().runFinalization()  </li>
+</ul>
+<h3 id="runFinalizersOnExit"><a href="#runFinalizersOnExit" class="headerlink" title="runFinalizersOnExit"></a>runFinalizersOnExit</h3><p>方法：void runFinalizersOnExit (boolean value)<br>类似方法：</p>
+<ul>
+<li><a href="#gc">gc()</a>  </li>
+</ul>
+<h3 id="setErr"><a href="#setErr" class="headerlink" title="setErr"></a>setErr</h3><p>方法：void setErr (PrintStream err)<br>功能：重新分配“标准”错误输出流。<br>类似方法：</p>
+<ul>
+<li>void setIn (InputStream in)</li>
+<li>void setOut (PrintStream out)</li>
+</ul>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://www.hchstudio.cn/article/2016/b897/" data-id="cji7coh0v000vpg03fu3nmmc5" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxklEQVR42u3aQW7DMAwEQP//0+kDmgpLUhJcYHwKAlsZ57AQRT5PfH2Cq7fac+LCxcUdcxPE788Jes3qrYmLi3uTmy/311N/3ZOvv74HFxf3zdx1bCUbmuTlcXFx/wu3vB2Jix9cXNx3cpPiZx1eecCt199Wq+Hi4g64efSc+3zkfBcXF7fF/Yyv6mFHHl5ffgsXF/cKtxo6+eajesBaODTBxcW9yK0+nDdi10+V2zC4uLgXuXnxU42t3qs2Kbi4uJu4+ULV+5Pip3oQg4uLe5rba46uI6zaRi3cj4uLe4XbG5KoDnL1hrfKaFxc3E3cXoRVi5lJn/Tp/dW4uLjTrmi5mJm3UnojX7i4uO/h9g40J8XPKMhwcXHH3NMHo9XXbs6J4OLibuXuLWDy8mbUaMHFxT3MzX+mGjfVb6KgxMXFvcJNAqvXAtl155encHFxD3N7jY11tPUCsbkXw8XFPcCdTz3lVUk1KEdoXFzcMTcPr3J/Jh7eyse/cHFxb3J7w1iTNkm1BMLFxX0ntzeS1WuxbAgyXFzcK9zqlqi66YmCDxcX9yK3Fy5VYq/4+bLFwcXFPcydHGfk5U31BHfD+S4uLm6H+wM5k3adZJFRdAAAAABJRU5ErkJggg==" class="article-share-link">分享</a><div class="tags"><a href="/tags/Java/">Java</a></div><div class="post-nav"><a href="/article/2016/692b/" class="pre">Java NIO笔记</a><a href="/article/2016/dea7/" class="next">otto框架解析</a></div><div id="container"></div><link rel="stylesheet" href="/css/default.css"><script src="/js/gitment.browser.js"></script><script>var gitment = new Gitment({
+  owner: 'ChanghuiN',
+  repo: 'ChanghuiN.github.io',
+  oauth: {
+    client_id: '66106b18af72ad1fe98a',
+    client_secret: '5602bdf32cf5f90c31001be000afd88a48d6f563',
+  },
+})
+gitment.render('container')
+</script><script>var cpro_id = "u3438285";</script><script src="http://cpro.baidustatic.com/cpro/ui/cm.js"></script></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><script>var cpro_id = "u3209562";</script><script src="//cpro.baidustatic.com/cpro/ui/c.js"></script><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kotlin/">Kotlin</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/总结/">总结</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅游日记/">旅游日记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架解析/">框架解析</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/旅游日记/" style="font-size: 15px;">旅游日记</a> <a href="/tags/总结/" style="font-size: 15px;">总结</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/源码解析/" style="font-size: 15px;">源码解析</a> <a href="/tags/学习笔记/" style="font-size: 15px;">学习笔记</a> <a href="/tags/Kotlin/" style="font-size: 15px;">Kotlin</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Shell/" style="font-size: 15px;">Shell</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/问题排查/" style="font-size: 15px;">问题排查</a> <a href="/tags/配置中心/" style="font-size: 15px;">配置中心</a> <a href="/tags/Dubbo/" style="font-size: 15px;">Dubbo</a> <a href="/tags/RPC/" style="font-size: 15px;">RPC</a> <a href="/tags/分布式/" style="font-size: 15px;">分布式</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/2018/e848/">阿里 RPC 框架 DUBBO 初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/10fc/">死磕Java之聊聊HashMap源码(基于JDK1.8)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/fea5/">聊聊HashSet源码</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/ccf6/">classpath* 和 classpath使用遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/d4ae/">Kotlin：Android开发技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/1766/">死磕Java之聊聊ThreadLocal源码(基于JDK1.8)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/e5cd/">死磕Java之聊聊LinkedList源码(基于JDK1.8)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/e74f/">聊聊ArrayList源码(基于JDK1.8)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/ae78/">Python 数据处理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2018/96ac/">复杂业务下向Mysql导入30万条数据代码优化的踩坑记录</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div></div><script>var cpro_id = "u3438277";</script><script src="//cpro.baidustatic.com/cpro/ui/c.js"></script></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer"><div>©2018 <a href="/." rel="nofollow">I-team.</a> Powered by<a rel="nofollow" target="_blank" style="font-weight: bold" href="http://www.hchstudio.cn"> ChanghuiN. </a> 版权所有 晋ICP备15001365号</div></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?57858db5693024385f944247dd150c32";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https'){
+  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+} else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+}
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script></div></body></html>
