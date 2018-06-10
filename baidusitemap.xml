@@ -3,10 +3,31 @@
 
 
     
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/29b5/</loc>
+    <lastmod>2018-06-10T06:22:43.959Z</lastmod>
+    <data>
+        <display>
+        <title>I-team博客的gitlab-runner持续集成实践</title>
+        <pubTime>2018-06-10T06:20:13.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>gitlab-ci</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="http://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://www.hchstudio.cn/article/2018/e848/</loc>
-    <lastmod>2018-06-09T11:47:41.568Z</lastmod>
+    <lastmod>2018-06-10T06:22:43.959Z</lastmod>
     <data>
         <display>
         <title>阿里 RPC 框架 DUBBO 初体验</title>
@@ -15,10 +36,6 @@
         <tag>Java</tag>
          
         <tag>Dubbo</tag>
-         
-        <tag>RPC</tag>
-         
-        <tag>分布式</tag>
          
          
            
@@ -29,6 +46,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://www.hchstudio.cn/article/2018/3dd9/</loc>
