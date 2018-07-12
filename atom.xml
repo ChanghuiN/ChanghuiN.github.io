@@ -106,11 +106,11 @@
       <category term="Go" scheme="http://www.hchstudio.cn/categories/Go/"/>
     
     
-      <category term="golang" scheme="http://www.hchstudio.cn/tags/golang/"/>
+      <category term="web" scheme="http://www.hchstudio.cn/tags/web/"/>
     
       <category term="Redis" scheme="http://www.hchstudio.cn/tags/Redis/"/>
     
-      <category term="web" scheme="http://www.hchstudio.cn/tags/web/"/>
+      <category term="golang" scheme="http://www.hchstudio.cn/tags/golang/"/>
     
   </entry>
   
@@ -160,9 +160,9 @@
     
       <category term="Java" scheme="http://www.hchstudio.cn/tags/Java/"/>
     
-      <category term="Redis" scheme="http://www.hchstudio.cn/tags/Redis/"/>
-    
       <category term="Spring Boot" scheme="http://www.hchstudio.cn/tags/Spring-Boot/"/>
+    
+      <category term="Redis" scheme="http://www.hchstudio.cn/tags/Redis/"/>
     
   </entry>
   
