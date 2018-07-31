@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.hchstudio.cn/about/me.html</loc>
+    
+    <lastmod>2018-07-31T07:08:38.465Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/22ff/</loc>
+    
+    <lastmod>2018-07-31T07:08:38.465Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/cc2a/</loc>
+    
+    <lastmod>2018-07-31T07:08:38.465Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.hchstudio.cn/article/2018/b903/</loc>
     
     <lastmod>2018-07-18T11:02:25.809Z</lastmod>
@@ -9,21 +30,14 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/about/me.html</loc>
-    
-    <lastmod>2018-07-18T10:45:37.934Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/73dd/</loc>
+    <loc>http://www.hchstudio.cn/article/2016/dea7/</loc>
     
     <lastmod>2018-07-17T16:02:39.160Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2016/dea7/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/73dd/</loc>
     
     <lastmod>2018-07-17T16:02:39.160Z</lastmod>
     
@@ -37,7 +51,7 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/3dd9/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/7afe/</loc>
     
     <lastmod>2018-07-17T15:53:43.760Z</lastmod>
     
@@ -51,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/7afe/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/3dd9/</loc>
     
     <lastmod>2018-07-17T15:53:43.760Z</lastmod>
     
@@ -59,6 +73,13 @@
   
   <url>
     <loc>http://www.hchstudio.cn/article/2018/d5b3/</loc>
+    
+    <lastmod>2018-07-17T15:53:43.758Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/2150/</loc>
     
     <lastmod>2018-07-17T15:53:43.758Z</lastmod>
     
@@ -73,13 +94,6 @@
   
   <url>
     <loc>http://www.hchstudio.cn/article/2018/6f25/</loc>
-    
-    <lastmod>2018-07-17T15:53:43.758Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/2150/</loc>
     
     <lastmod>2018-07-17T15:53:43.758Z</lastmod>
     
@@ -135,49 +149,7 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2017/8eb1/</loc>
-    
-    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2017/b277/</loc>
-    
-    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/e5cd/</loc>
-    
-    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.hchstudio.cn/article/2018/2649/</loc>
-    
-    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2017/8eb1/</loc>
-    
-    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/e74f/</loc>
-    
-    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/10fc/</loc>
     
     <lastmod>2018-06-09T11:47:41.566Z</lastmod>
     
@@ -191,6 +163,20 @@
   </url>
   
   <url>
+    <loc>http://www.hchstudio.cn/article/2017/8eb1/</loc>
+    
+    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hchstudio.cn/article/2017/8eb1/</loc>
+    
+    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.hchstudio.cn/article/2018/fea5/</loc>
     
     <lastmod>2018-06-09T11:47:41.566Z</lastmod>
@@ -198,21 +184,35 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2017/3aeb/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/10fc/</loc>
     
-    <lastmod>2018-06-09T11:47:41.565Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2016/396e/</loc>
-    
-    <lastmod>2018-06-09T11:47:41.565Z</lastmod>
+    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/ae78/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/e74f/</loc>
+    
+    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/e5cd/</loc>
+    
+    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hchstudio.cn/article/2017/b277/</loc>
+    
+    <lastmod>2018-06-09T11:47:41.566Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/d4ae/</loc>
     
     <lastmod>2018-06-09T11:47:41.565Z</lastmod>
     
@@ -233,7 +233,14 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2017/b467/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/ae78/</loc>
+    
+    <lastmod>2018-06-09T11:47:41.565Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hchstudio.cn/article/2016/396e/</loc>
     
     <lastmod>2018-06-09T11:47:41.565Z</lastmod>
     
@@ -247,6 +254,13 @@
   </url>
   
   <url>
+    <loc>http://www.hchstudio.cn/article/2017/b467/</loc>
+    
+    <lastmod>2018-06-09T11:47:41.565Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.hchstudio.cn/article/2018/ccf6/</loc>
     
     <lastmod>2018-06-09T11:47:41.565Z</lastmod>
@@ -254,21 +268,14 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/d4ae/</loc>
+    <loc>http://www.hchstudio.cn/article/2017/3aeb/</loc>
     
     <lastmod>2018-06-09T11:47:41.565Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/cc2a/</loc>
-    
-    <lastmod>2018-06-09T11:47:41.564Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/e84d/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/4a65/</loc>
     
     <lastmod>2018-06-09T11:47:41.564Z</lastmod>
     
@@ -282,14 +289,14 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2016/692b/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/e84d/</loc>
     
     <lastmod>2018-06-09T11:47:41.564Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2017/c922/</loc>
+    <loc>http://www.hchstudio.cn/article/2016/692b/</loc>
     
     <lastmod>2018-06-09T11:47:41.564Z</lastmod>
     
@@ -303,7 +310,7 @@
   </url>
   
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/4a65/</loc>
+    <loc>http://www.hchstudio.cn/article/2017/c922/</loc>
     
     <lastmod>2018-06-09T11:47:41.564Z</lastmod>
     
