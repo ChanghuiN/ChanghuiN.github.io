@@ -728,7 +728,7 @@ pre {
     right: 35px; } }
 
 /* read more*/
-.readmore a {
+#readmoreH {
   font-size: 14px;
   color: #444;
   margin: -10px 0;
@@ -736,11 +736,36 @@ pre {
   border: 1px solid #ddd;
   border-radius: 5px;
   float: right; }
-  .readmore a:after {
+  #readmoreH:after {
     font-family: "FontAwesome";
     content: "\f101";
     padding-left: 0.3em; }
-  .readmore a:hover {
+  #readmoreH:hover {
+    background: #F8F8F8;
+    border-bottom-color: #D26911; }
+
+#tagsH {
+  font-size: 14px;
+  color: #444;
+  margin: -10px 0;
+  padding: 5px 10px;
+  border-radius: 5px; }
+  #tagsH:hover {
+    background: #F8F8F8;
+    border-bottom-color: #D26911; }
+  #tagsH:before {
+    font-family: "FontAwesome";
+    content: "\f0c6";
+    padding-right: 0.3em; }
+
+#authorH {
+  font-size: 14px;
+  color: #444;
+  padding: 5px 10px;
+  border-radius: 5px;
+  float: right;
+  margin: 15px 0 0; }
+  #authorH:hover {
     background: #F8F8F8;
     border-bottom-color: #D26911; }
 
