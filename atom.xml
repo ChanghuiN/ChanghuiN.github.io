@@ -60,9 +60,9 @@
     
       <category term="源码解析" scheme="http://www.hchstudio.cn/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
     
-      <category term="Redis" scheme="http://www.hchstudio.cn/tags/Redis/"/>
-    
       <category term="netty" scheme="http://www.hchstudio.cn/tags/netty/"/>
+    
+      <category term="Redis" scheme="http://www.hchstudio.cn/tags/Redis/"/>
     
   </entry>
   

@@ -12,7 +12,7 @@ display: inline; padding: 0.5em 5px;" src="https://avatars0.githubusercontent.co
   repo: 'ChanghuiN.github.io',
   owner: 'ChanghuiN',
   admin: ['ChanghuiN'],
-  id: location.href,
+  id: location.pathname.split('/').slice(-2,-1)[0],
   distractionFreeMode: false
 })
 gitalk.render('gitalk-container')
