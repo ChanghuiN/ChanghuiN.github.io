@@ -771,6 +771,9 @@ pre {
     background: #F8F8F8;
     border-bottom-color: #D26911; }
 
+.author {
+  padding: 0 5px; }
+
 /* syntax highlight*/
 figure.highlight,
 .codeblock {
