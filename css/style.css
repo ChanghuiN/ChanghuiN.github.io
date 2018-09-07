@@ -377,7 +377,14 @@ div {
   .content_container {
     padding-right: 0; } }
 
-blockquote, .stressed {
+.post-content blockquote {
+  color: #666;
+  padding: 1px 23px;
+  margin: 22px 0;
+  border-left: 4px solid #cbcbcb;
+  background-color: #f8f8f8; }
+
+.stressed {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 2.5em 0;
@@ -385,7 +392,7 @@ blockquote, .stressed {
   color: #555;
   border-left: none; }
 
-blockquote::before, .stressed-quote::before {
+.stressed-quote::before {
   content: "\201C";
   display: block;
   font-family: times;
@@ -1311,7 +1318,7 @@ figure.highlight,
 .toc-article {
   border: 1px solid #bbb;
   border-radius: 7px;
-  margin: 1.1em 0 0 2em;
+  margin: 0.5em 0 0 2em;
   padding: 0.7em 0.7em 0 0.7em;
   max-width: 40%; }
 
