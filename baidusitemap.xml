@@ -4,6 +4,45 @@
 
     
   <url>
+    <loc>http://www.hchstudio.cn/article/2018/0/</loc>
+    <lastmod>2018-09-20T10:45:29.834Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2018-09-20T10:45:29.834Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/b674/</loc>
+    <lastmod>2018-09-20T10:42:40.027Z</lastmod>
+    <data>
+        <display>
+        <title>造个轮子之基于 Netty 实现自己的 RPC 框架</title>
+        <pubTime>2018-09-03T16:01:58.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hchstudio.cn/article/2018/e164/</loc>
     <lastmod>2018-09-05T07:09:19.539Z</lastmod>
     <data>
@@ -27,52 +66,6 @@
     </url>
 
     
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/b674/</loc>
-    <lastmod>2018-09-04T00:28:22.308Z</lastmod>
-    <data>
-        <display>
-        <title>造个轮子之基于 Netty 实现自己的 RPC 框架</title>
-        <pubTime>2018-09-03T16:01:58.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>源码解析</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/51ba/</loc>
-    <lastmod>2018-09-03T16:14:46.588Z</lastmod>
-    <data>
-        <display>
-        <title>高性能无锁队列 Disruptor 初体验</title>
-        <pubTime>2018-08-15T13:15:57.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://www.hchstudio.cn/article/2018/4928/</loc>
@@ -121,42 +114,16 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/1766/</loc>
-    <lastmod>2018-09-03T16:14:46.587Z</lastmod>
+    <loc>http://www.hchstudio.cn/article/2018/51ba/</loc>
+    <lastmod>2018-09-03T16:14:46.588Z</lastmod>
     <data>
         <display>
-        <title>死磕Java之聊聊ThreadLocal源码(基于JDK1.8)</title>
-        <pubTime>2018-05-09T10:10:57.000Z</pubTime>
+        <title>高性能无锁队列 Disruptor 初体验</title>
+        <pubTime>2018-08-15T13:15:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
         <tag>Java</tag>
-         
-        <tag>源码解析</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/efed/</loc>
-    <lastmod>2018-09-03T16:14:46.587Z</lastmod>
-    <data>
-        <display>
-        <title>聊聊 JDK 非阻塞队列源码（CAS实现）</title>
-        <pubTime>2018-08-02T06:15:57.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>源码解析</tag>
          
          
            
@@ -193,15 +160,13 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/fea5/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/1766/</loc>
     <lastmod>2018-09-03T16:14:46.587Z</lastmod>
     <data>
         <display>
-        <title>聊聊HashSet源码</title>
-        <pubTime>2018-05-29T15:09:13.000Z</pubTime>
+        <title>死磕Java之聊聊ThreadLocal源码(基于JDK1.8)</title>
+        <pubTime>2018-05-09T10:10:57.000Z</pubTime>
         
-        <tag>ChanghuiN</tag>
-         
         <tag>haifeiWu</tag>
          
         <tag>Java</tag>
@@ -241,6 +206,30 @@
 
     
   <url>
+    <loc>http://www.hchstudio.cn/article/2018/e74f/</loc>
+    <lastmod>2018-09-03T16:14:46.587Z</lastmod>
+    <data>
+        <display>
+        <title>聊聊ArrayList源码(基于JDK1.8)</title>
+        <pubTime>2018-05-03T16:57:57.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hchstudio.cn/article/2018/10fc/</loc>
     <lastmod>2018-09-03T16:14:46.587Z</lastmod>
     <data>
@@ -265,12 +254,12 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/e74f/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/efed/</loc>
     <lastmod>2018-09-03T16:14:46.587Z</lastmod>
     <data>
         <display>
-        <title>聊聊ArrayList源码(基于JDK1.8)</title>
-        <pubTime>2018-05-03T16:57:57.000Z</pubTime>
+        <title>聊聊 JDK 非阻塞队列源码（CAS实现）</title>
+        <pubTime>2018-08-02T06:15:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
@@ -337,16 +326,20 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2017/b277/</loc>
-    <lastmod>2018-09-03T16:14:46.586Z</lastmod>
+    <loc>http://www.hchstudio.cn/article/2018/fea5/</loc>
+    <lastmod>2018-09-03T16:14:46.587Z</lastmod>
     <data>
         <display>
-        <title>shell脚本实现自动保留最近n次备份记录</title>
-        <pubTime>2017-12-08T12:09:38.000Z</pubTime>
+        <title>聊聊HashSet源码</title>
+        <pubTime>2018-05-29T15:09:13.000Z</pubTime>
         
+        <tag>ChanghuiN</tag>
+         
         <tag>haifeiWu</tag>
          
-        <tag>Shell</tag>
+        <tag>Java</tag>
+         
+        <tag>源码解析</tag>
          
          
            
@@ -475,6 +468,32 @@
 
     
   <url>
+    <loc>http://www.hchstudio.cn/article/2018/6f25/</loc>
+    <lastmod>2018-09-03T16:14:46.586Z</lastmod>
+    <data>
+        <display>
+        <title>使用Spring Boot实现博客统计服务</title>
+        <pubTime>2018-06-19T06:20:57.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>web</tag>
+         
+        <tag>Redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hchstudio.cn/article/2017/d3b2/</loc>
     <lastmod>2018-09-03T16:14:46.586Z</lastmod>
     <data>
@@ -519,32 +538,6 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/6f25/</loc>
-    <lastmod>2018-09-03T16:14:46.586Z</lastmod>
-    <data>
-        <display>
-        <title>使用Spring Boot实现博客统计服务</title>
-        <pubTime>2018-06-19T06:20:57.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>web</tag>
-         
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.hchstudio.cn/article/2018/99f9/</loc>
     <lastmod>2018-09-03T16:14:46.586Z</lastmod>
     <data>
@@ -567,132 +560,34 @@
 
     
   <url>
+    <loc>http://www.hchstudio.cn/article/2017/b277/</loc>
+    <lastmod>2018-09-03T16:14:46.586Z</lastmod>
+    <data>
+        <display>
+        <title>shell脚本实现自动保留最近n次备份记录</title>
+        <pubTime>2017-12-08T12:09:38.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hchstudio.cn/article/2017/8eb1/</loc>
     <lastmod>2018-09-03T16:14:46.586Z</lastmod>
     <data>
         <display>
         <title>spring aop实现权限管理</title>
         <pubTime>2017-08-23T12:40:44.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/8191/</loc>
-    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
-    <data>
-        <display>
-        <title>Netty源码中对Redis协议的实现</title>
-        <pubTime>2018-08-08T16:01:00.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>源码解析</tag>
-         
-        <tag>netty</tag>
-         
-        <tag>Redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2017/3aeb/</loc>
-    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
-    <data>
-        <display>
-        <title>大学四年</title>
-        <pubTime>2017-06-26T14:47:25.000Z</pubTime>
-        
-        <tag>ChanghuiN</tag>
-         
-        <tag>总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="总结" url="http://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/2622/</loc>
-    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
-    <data>
-        <display>
-        <title>golang重构博客统计服务</title>
-        <pubTime>2018-06-25T09:57:57.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>web</tag>
-         
-        <tag>Redis</tag>
-         
-        <tag>golang</tag>
-         
-         
-           
-             
-              <breadCrumb title="Go" url="http://www.hchstudio.cn/categories/Go/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/ccf6/</loc>
-    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
-    <data>
-        <display>
-        <title>classpath* 和 classpath使用遇到的问题</title>
-        <pubTime>2018-05-24T09:55:57.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/d5b3/</loc>
-    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
-    <data>
-        <display>
-        <title>Socket 中粘包问题浅析及其解决方案</title>
-        <pubTime>2018-07-16T12:59:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
@@ -733,6 +628,32 @@
 
     
   <url>
+    <loc>http://www.hchstudio.cn/article/2018/2622/</loc>
+    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
+    <data>
+        <display>
+        <title>golang重构博客统计服务</title>
+        <pubTime>2018-06-25T09:57:57.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>web</tag>
+         
+        <tag>Redis</tag>
+         
+        <tag>golang</tag>
+         
+         
+           
+             
+              <breadCrumb title="Go" url="http://www.hchstudio.cn/categories/Go/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.hchstudio.cn/article/2018/e687/</loc>
     <lastmod>2018-09-03T16:14:46.585Z</lastmod>
     <data>
@@ -750,6 +671,50 @@
            
              
               <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/ccf6/</loc>
+    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
+    <data>
+        <display>
+        <title>classpath* 和 classpath使用遇到的问题</title>
+        <pubTime>2018-05-24T09:55:57.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hchstudio.cn/article/2017/3aeb/</loc>
+    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
+    <data>
+        <display>
+        <title>大学四年</title>
+        <pubTime>2017-06-26T14:47:25.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
+         
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="http://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -823,21 +788,27 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2017/eae7/</loc>
-    <lastmod>2018-09-03T16:14:46.584Z</lastmod>
+    <loc>http://www.hchstudio.cn/article/2018/8191/</loc>
+    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
     <data>
         <display>
-        <title>Android动态权限申请(Kotlin版)</title>
-        <pubTime>2017-08-02T15:37:25.000Z</pubTime>
+        <title>Netty源码中对Redis协议的实现</title>
+        <pubTime>2018-08-08T16:01:00.000Z</pubTime>
         
-        <tag>ChanghuiN</tag>
+        <tag>haifeiWu</tag>
          
-        <tag>Android</tag>
+        <tag>Java</tag>
+         
+        <tag>源码解析</tag>
+         
+        <tag>netty</tag>
+         
+        <tag>Redis</tag>
          
          
            
              
-              <breadCrumb title="Android" url="http://www.hchstudio.cn/categories/Android/"/>
+              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
           
         </display>
     </data>
@@ -845,16 +816,40 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/b903/</loc>
-    <lastmod>2018-09-03T16:14:46.584Z</lastmod>
+    <loc>http://www.hchstudio.cn/article/2018/d5b3/</loc>
+    <lastmod>2018-09-03T16:14:46.585Z</lastmod>
     <data>
         <display>
-        <title>JDK 定时任务 Timer 与 ScheduledExecutorService 排坑记录</title>
-        <pubTime>2018-07-18T12:59:57.000Z</pubTime>
+        <title>Socket 中粘包问题浅析及其解决方案</title>
+        <pubTime>2018-07-16T12:59:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
         <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/2150/</loc>
+    <lastmod>2018-09-03T16:14:46.584Z</lastmod>
+    <data>
+        <display>
+        <title>I-team 博客全文检索 Elasticsearch 实战</title>
+        <pubTime>2018-07-11T16:00:57.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>web</tag>
          
          
            
@@ -939,18 +934,40 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/73dd/</loc>
+    <loc>http://www.hchstudio.cn/article/2017/eae7/</loc>
     <lastmod>2018-09-03T16:14:46.584Z</lastmod>
     <data>
         <display>
-        <title>Netty实战之第一个应用</title>
-        <pubTime>2018-06-21T10:10:57.000Z</pubTime>
+        <title>Android动态权限申请(Kotlin版)</title>
+        <pubTime>2017-08-02T15:37:25.000Z</pubTime>
         
-        <tag>haifeiWu</tag>
+        <tag>ChanghuiN</tag>
+         
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.hchstudio.cn/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hchstudio.cn/article/2016/692b/</loc>
+    <lastmod>2018-09-03T16:14:46.584Z</lastmod>
+    <data>
+        <display>
+        <title>Java NIO笔记</title>
+        <pubTime>2016-10-05T02:43:55.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
          
         <tag>Java</tag>
          
-        <tag>源码解析</tag>
+        <tag>学习笔记</tag>
          
          
            
@@ -985,18 +1002,16 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2016/692b/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/e84d/</loc>
     <lastmod>2018-09-03T16:14:46.584Z</lastmod>
     <data>
         <display>
-        <title>Java NIO笔记</title>
-        <pubTime>2016-10-05T02:43:55.000Z</pubTime>
+        <title>Java命令之javap初探</title>
+        <pubTime>2018-02-26T05:22:29.000Z</pubTime>
         
-        <tag>ChanghuiN</tag>
+        <tag>haifeiWu</tag>
          
         <tag>Java</tag>
-         
-        <tag>学习笔记</tag>
          
          
            
@@ -1009,12 +1024,12 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/e84d/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/b903/</loc>
     <lastmod>2018-09-03T16:14:46.584Z</lastmod>
     <data>
         <display>
-        <title>Java命令之javap初探</title>
-        <pubTime>2018-02-26T05:22:29.000Z</pubTime>
+        <title>JDK 定时任务 Timer 与 ScheduledExecutorService 排坑记录</title>
+        <pubTime>2018-07-18T12:59:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
@@ -1057,45 +1072,23 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2018/2150/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/73dd/</loc>
     <lastmod>2018-09-03T16:14:46.584Z</lastmod>
     <data>
         <display>
-        <title>I-team 博客全文检索 Elasticsearch 实战</title>
-        <pubTime>2018-07-11T16:00:57.000Z</pubTime>
+        <title>Netty实战之第一个应用</title>
+        <pubTime>2018-06-21T10:10:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
         <tag>Java</tag>
          
-        <tag>web</tag>
+        <tag>源码解析</tag>
          
          
            
              
               <breadCrumb title="Java" url="http://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/4a65/</loc>
-    <lastmod>2018-09-03T16:14:46.583Z</lastmod>
-    <data>
-        <display>
-        <title>2017年度总结</title>
-        <pubTime>2018-01-02T13:25:43.000Z</pubTime>
-        
-        <tag>ChanghuiN</tag>
-         
-        <tag>总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="总结" url="http://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -1118,6 +1111,52 @@
            
              
               <breadCrumb title="Android" url="http://www.hchstudio.cn/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hchstudio.cn/article/2018/eed8/</loc>
+    <lastmod>2018-09-03T16:14:46.583Z</lastmod>
+    <data>
+        <display>
+        <title>Dagger Android支持库（译文）</title>
+        <pubTime>2018-07-17T15:38:28.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>译文</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.hchstudio.cn/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hchstudio.cn/article/2016/e1ad/</loc>
+    <lastmod>2018-09-03T16:14:46.583Z</lastmod>
+    <data>
+        <display>
+        <title>2016学习总结</title>
+        <pubTime>2016-12-31T11:51:49.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
+         
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="http://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -1149,12 +1188,12 @@
 
     
   <url>
-    <loc>http://www.hchstudio.cn/article/2016/e1ad/</loc>
+    <loc>http://www.hchstudio.cn/article/2018/4a65/</loc>
     <lastmod>2018-09-03T16:14:46.583Z</lastmod>
     <data>
         <display>
-        <title>2016学习总结</title>
-        <pubTime>2016-12-31T11:51:49.000Z</pubTime>
+        <title>2017年度总结</title>
+        <pubTime>2018-01-02T13:25:43.000Z</pubTime>
         
         <tag>ChanghuiN</tag>
          
@@ -1164,30 +1203,6 @@
            
              
               <breadCrumb title="总结" url="http://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.hchstudio.cn/article/2018/eed8/</loc>
-    <lastmod>2018-09-03T16:14:46.583Z</lastmod>
-    <data>
-        <display>
-        <title>Dagger Android支持库（译文）</title>
-        <pubTime>2018-07-17T15:38:28.000Z</pubTime>
-        
-        <tag>ChanghuiN</tag>
-         
-        <tag>Android</tag>
-         
-        <tag>译文</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.hchstudio.cn/categories/Android/"/>
           
         </display>
     </data>
