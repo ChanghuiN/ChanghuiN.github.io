@@ -214,7 +214,7 @@ div {
       padding-right: 0.3em; }
     .post .disqus-comment-count:hover {
       color: #444; }
-  .post .post-content {
+  .post .post-content, .post .post-content_private {
     clear: left;
     font-size: 15px;
     line-height: 1.77;
@@ -223,61 +223,61 @@ div {
     text-align: justify;
     text-justify: distribute;
     word-break: normal; }
-    .post .post-content h2 {
+    .post .post-content h2, .post .post-content_private h2 {
       margin: 1.4em 0 1.1em;
       border-bottom: 1px solid #eee;
       overflow: hidden; }
-    .post .post-content h3 {
+    .post .post-content h3, .post .post-content_private h3 {
       margin: 1.4em 0 1.1em; }
-    .post .post-content pre code {
+    .post .post-content pre code, .post .post-content_private pre code {
       padding: 0 2em; }
-    .post .post-content p {
+    .post .post-content p, .post .post-content_private p {
       margin: 0 0 1.234em; }
-      .post .post-content p code {
+      .post .post-content p code, .post .post-content_private p code {
         display: inline-block;
         margin: 0 5px;
         padding: 0 5px;
         background: #f7f8f8;
         font-family: Menlo, Consolas, monospace !important; }
-      .post .post-content p a {
+      .post .post-content p a, .post .post-content_private p a {
         color: #01579f;
         padding-bottom: 2px;
         word-break: normal; }
-        .post .post-content p a:hover {
+        .post .post-content p a:hover, .post .post-content_private p a:hover {
           text-decoration: underline; }
-    .post .post-content .caption {
+    .post .post-content .caption, .post .post-content_private .caption {
       color: #444;
       display: block;
       font-size: 0.9em;
       margin-top: 0.1em;
       position: relative;
       text-align: center; }
-    .post .post-content hr {
+    .post .post-content hr, .post .post-content_private hr {
       margin: 2.4em auto;
       border: none;
       border-top: 1px solid #eee;
       position: relative; }
-    .post .post-content img {
+    .post .post-content img, .post .post-content_private img {
       max-width: 100%;
       padding: 0.5em 0;
       margin: auto;
       display: block; }
-    .post .post-content ul, .post .post-content ol {
+    .post .post-content ul, .post .post-content ol, .post .post-content_private ul, .post .post-content_private ol {
       border-radius: 3px;
       margin: 1em 0; }
-      .post .post-content ul ul, .post .post-content ol ul {
+      .post .post-content ul ul, .post .post-content ol ul, .post .post-content_private ul ul, .post .post-content_private ol ul {
         margin: 0; }
-      .post .post-content ul code, .post .post-content ol code {
+      .post .post-content ul code, .post .post-content ol code, .post .post-content_private ul code, .post .post-content_private ol code {
         display: inline-block;
         margin: 0 5px;
         padding: 0px 5px;
         background: #f7f8f8;
         font-family: Menlo, Consolas, monospace !important; }
-      .post .post-content ul a, .post .post-content ol a {
+      .post .post-content ul a, .post .post-content ol a, .post .post-content_private ul a, .post .post-content_private ol a {
         color: #01579f;
         padding-bottom: 2px;
         word-break: normal; }
-        .post .post-content ul a:hover, .post .post-content ol a:hover {
+        .post .post-content ul a:hover, .post .post-content ol a:hover, .post .post-content_private ul a:hover, .post .post-content_private ol a:hover {
           text-decoration: underline; }
   .post .tags {
     padding-bottom: 1em; }
@@ -377,7 +377,7 @@ div {
   .content_container {
     padding-right: 0; } }
 
-.post-content blockquote {
+.post-content blockquote, .post-content_private blockquote {
   color: #666;
   padding: 1px 23px;
   margin: 22px 0;
