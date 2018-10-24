@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://www.hchstudio.cn/article/2018/3dd9/</loc>
+    <lastmod>2018-10-24T02:44:04.362Z</lastmod>
+    <data>
+        <display>
+        <title>自建脚手架之配置中心--LightConf的实现</title>
+        <pubTime>2018-04-22T10:42:07.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>配置中心</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.hchstudio.cn/article/2018/3da/</loc>
     <lastmod>2018-10-23T11:16:25.739Z</lastmod>
     <data>
@@ -74,12 +98,34 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/e5cd/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/4928/</loc>
     <lastmod>2018-09-22T05:47:50.688Z</lastmod>
     <data>
         <display>
-        <title>死磕Java之聊聊LinkedList源码(基于JDK1.8)</title>
-        <pubTime>2018-05-06T14:23:45.000Z</pubTime>
+        <title>阿里离线数据同步工具 DataX 踩坑记录</title>
+        <pubTime>2018-07-04T10:15:57.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2018/d91b/</loc>
+    <lastmod>2018-09-22T05:47:50.688Z</lastmod>
+    <data>
+        <display>
+        <title>阿里云离线同步工具DataX源码略读</title>
+        <pubTime>2018-07-05T10:27:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
@@ -98,18 +144,16 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/3dd9/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/e848/</loc>
     <lastmod>2018-09-22T05:47:50.688Z</lastmod>
     <data>
         <display>
-        <title>自建脚手架之配置中心--LightConf的实现</title>
-        <pubTime>2018-04-22T10:42:07.000Z</pubTime>
+        <title>阿里 RPC 框架 DUBBO 初体验</title>
+        <pubTime>2018-06-07T07:21:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
         <tag>Java</tag>
-         
-        <tag>配置中心</tag>
          
          
            
@@ -145,13 +189,14 @@
     </url>
 
     
+    
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/d91b/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/e5cd/</loc>
     <lastmod>2018-09-22T05:47:50.688Z</lastmod>
     <data>
         <display>
-        <title>阿里云离线同步工具DataX源码略读</title>
-        <pubTime>2018-07-05T10:27:57.000Z</pubTime>
+        <title>死磕Java之聊聊LinkedList源码(基于JDK1.8)</title>
+        <pubTime>2018-05-06T14:23:45.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
@@ -194,53 +239,6 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/10fc/</loc>
-    <lastmod>2018-09-22T05:47:50.688Z</lastmod>
-    <data>
-        <display>
-        <title>死磕Java之聊聊HashMap源码(基于JDK1.8)</title>
-        <pubTime>2018-06-04T13:55:57.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>源码解析</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hchstudio.cn/article/2018/4928/</loc>
-    <lastmod>2018-09-22T05:47:50.688Z</lastmod>
-    <data>
-        <display>
-        <title>阿里离线数据同步工具 DataX 踩坑记录</title>
-        <pubTime>2018-07-04T10:15:57.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
     <loc>https://www.hchstudio.cn/article/2018/fea5/</loc>
     <lastmod>2018-09-22T05:47:50.688Z</lastmod>
     <data>
@@ -267,12 +265,12 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/22ff/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/efed/</loc>
     <lastmod>2018-09-22T05:47:50.688Z</lastmod>
     <data>
         <display>
-        <title>聊聊 JDK 阻塞队列源码（ReentrantLock实现）</title>
-        <pubTime>2018-07-31T07:05:57.000Z</pubTime>
+        <title>聊聊 JDK 非阻塞队列源码（CAS实现）</title>
+        <pubTime>2018-08-02T06:15:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
@@ -308,6 +306,30 @@
            
              
               <breadCrumb title="Android" url="https://www.hchstudio.cn/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2018/22ff/</loc>
+    <lastmod>2018-09-22T05:47:50.688Z</lastmod>
+    <data>
+        <display>
+        <title>聊聊 JDK 阻塞队列源码（ReentrantLock实现）</title>
+        <pubTime>2018-07-31T07:05:57.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
           
         </display>
     </data>
@@ -361,16 +383,18 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/e848/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/10fc/</loc>
     <lastmod>2018-09-22T05:47:50.688Z</lastmod>
     <data>
         <display>
-        <title>阿里 RPC 框架 DUBBO 初体验</title>
-        <pubTime>2018-06-07T07:21:57.000Z</pubTime>
+        <title>死磕Java之聊聊HashMap源码(基于JDK1.8)</title>
+        <pubTime>2018-06-04T13:55:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
         <tag>Java</tag>
+         
+        <tag>源码解析</tag>
          
          
            
@@ -383,18 +407,16 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/efed/</loc>
-    <lastmod>2018-09-22T05:47:50.688Z</lastmod>
+    <loc>https://www.hchstudio.cn/article/2017/8eb1/</loc>
+    <lastmod>2018-09-22T05:47:50.687Z</lastmod>
     <data>
         <display>
-        <title>聊聊 JDK 非阻塞队列源码（CAS实现）</title>
-        <pubTime>2018-08-02T06:15:57.000Z</pubTime>
+        <title>spring aop实现权限管理</title>
+        <pubTime>2017-08-23T12:40:44.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
         <tag>Java</tag>
-         
-        <tag>源码解析</tag>
          
          
            
@@ -433,12 +455,12 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2017/8eb1/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/96ac/</loc>
     <lastmod>2018-09-22T05:47:50.687Z</lastmod>
     <data>
         <display>
-        <title>spring aop实现权限管理</title>
-        <pubTime>2017-08-23T12:40:44.000Z</pubTime>
+        <title>复杂业务下向Mysql导入30万条数据代码优化的踩坑记录</title>
+        <pubTime>2018-04-23T13:38:57.000Z</pubTime>
         
         <tag>haifeiWu</tag>
          
@@ -455,45 +477,21 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/2649/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/ccf6/</loc>
     <lastmod>2018-09-22T05:47:50.687Z</lastmod>
     <data>
         <display>
-        <title>《剑指Offer》50道算法面试题</title>
-        <pubTime>2018-03-15T15:36:44.000Z</pubTime>
+        <title>classpath* 和 classpath使用遇到的问题</title>
+        <pubTime>2018-05-24T09:55:57.000Z</pubTime>
         
-        <tag>ChanghuiN</tag>
+        <tag>haifeiWu</tag>
          
-        <tag>总结</tag>
-         
-        <tag>面试</tag>
+        <tag>Java</tag>
          
          
            
              
               <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hchstudio.cn/article/2017/b467/</loc>
-    <lastmod>2018-09-22T05:47:50.687Z</lastmod>
-    <data>
-        <display>
-        <title>浅谈程序设计</title>
-        <pubTime>2017-04-27T07:00:08.000Z</pubTime>
-        
-        <tag>ChanghuiN</tag>
-         
-        <tag>总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="总结" url="https://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -511,6 +509,28 @@
         <tag>haifeiWu</tag>
          
         <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2017/b277/</loc>
+    <lastmod>2018-09-22T05:47:50.687Z</lastmod>
+    <data>
+        <display>
+        <title>shell脚本实现自动保留最近n次备份记录</title>
+        <pubTime>2017-12-08T12:09:38.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Shell</tag>
          
          
            
@@ -559,28 +579,6 @@
         <tag>Java</tag>
          
         <tag>问题排查</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hchstudio.cn/article/2018/ccf6/</loc>
-    <lastmod>2018-09-22T05:47:50.687Z</lastmod>
-    <data>
-        <display>
-        <title>classpath* 和 classpath使用遇到的问题</title>
-        <pubTime>2018-05-24T09:55:57.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
          
          
            
@@ -665,28 +663,6 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2017/b277/</loc>
-    <lastmod>2018-09-22T05:47:50.687Z</lastmod>
-    <data>
-        <display>
-        <title>shell脚本实现自动保留最近n次备份记录</title>
-        <pubTime>2017-12-08T12:09:38.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Shell</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.hchstudio.cn/article/2017/d3b2/</loc>
     <lastmod>2018-09-22T05:47:50.687Z</lastmod>
     <data>
@@ -709,16 +685,40 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/96ac/</loc>
+    <loc>https://www.hchstudio.cn/article/2017/b467/</loc>
     <lastmod>2018-09-22T05:47:50.687Z</lastmod>
     <data>
         <display>
-        <title>复杂业务下向Mysql导入30万条数据代码优化的踩坑记录</title>
-        <pubTime>2018-04-23T13:38:57.000Z</pubTime>
+        <title>浅谈程序设计</title>
+        <pubTime>2017-04-27T07:00:08.000Z</pubTime>
         
-        <tag>haifeiWu</tag>
+        <tag>ChanghuiN</tag>
          
-        <tag>Java</tag>
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="https://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2018/2649/</loc>
+    <lastmod>2018-09-22T05:47:50.687Z</lastmod>
+    <data>
+        <display>
+        <title>《剑指Offer》50道算法面试题</title>
+        <pubTime>2018-03-15T15:36:44.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
+         
+        <tag>总结</tag>
+         
+        <tag>面试</tag>
          
          
            
@@ -753,14 +753,14 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/d5b3/</loc>
+    <loc>https://www.hchstudio.cn/article/2016/b897/</loc>
     <lastmod>2018-09-22T05:47:50.686Z</lastmod>
     <data>
         <display>
-        <title>Socket 中粘包问题浅析及其解决方案</title>
-        <pubTime>2018-07-16T12:59:57.000Z</pubTime>
+        <title>System方法总结</title>
+        <pubTime>2016-09-12T01:47:49.000Z</pubTime>
         
-        <tag>haifeiWu</tag>
+        <tag>ChanghuiN</tag>
          
         <tag>Java</tag>
          
@@ -768,6 +768,30 @@
            
              
               <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2018/d4ae/</loc>
+    <lastmod>2018-09-22T05:47:50.686Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin：Android开发技巧</title>
+        <pubTime>2018-05-12T13:25:17.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>Kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin" url="https://www.hchstudio.cn/categories/Kotlin/"/>
           
         </display>
     </data>
@@ -821,36 +845,14 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2016/396e/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/d5b3/</loc>
     <lastmod>2018-09-22T05:47:50.686Z</lastmod>
     <data>
         <display>
-        <title>Python基础(一)</title>
-        <pubTime>2016-11-27T12:41:18.000Z</pubTime>
+        <title>Socket 中粘包问题浅析及其解决方案</title>
+        <pubTime>2018-07-16T12:59:57.000Z</pubTime>
         
-        <tag>ChanghuiN</tag>
-         
-        <tag>Python</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="https://www.hchstudio.cn/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hchstudio.cn/article/2016/b897/</loc>
-    <lastmod>2018-09-22T05:47:50.686Z</lastmod>
-    <data>
-        <display>
-        <title>System方法总结</title>
-        <pubTime>2016-09-12T01:47:49.000Z</pubTime>
-        
-        <tag>ChanghuiN</tag>
+        <tag>haifeiWu</tag>
          
         <tag>Java</tag>
          
@@ -858,30 +860,6 @@
            
              
               <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hchstudio.cn/article/2018/d4ae/</loc>
-    <lastmod>2018-09-22T05:47:50.686Z</lastmod>
-    <data>
-        <display>
-        <title>Kotlin：Android开发技巧</title>
-        <pubTime>2018-05-12T13:25:17.000Z</pubTime>
-        
-        <tag>ChanghuiN</tag>
-         
-        <tag>Android</tag>
-         
-        <tag>Kotlin</tag>
-         
-         
-           
-             
-              <breadCrumb title="Kotlin" url="https://www.hchstudio.cn/categories/Kotlin/"/>
           
         </display>
     </data>
@@ -941,30 +919,6 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2017/9855/</loc>
-    <lastmod>2018-09-22T05:47:50.686Z</lastmod>
-    <data>
-        <display>
-        <title>Kotlin委托</title>
-        <pubTime>2017-09-03T15:34:12.000Z</pubTime>
-        
-        <tag>ChanghuiN</tag>
-         
-        <tag>Android</tag>
-         
-        <tag>Kotlin</tag>
-         
-         
-           
-             
-              <breadCrumb title="Kotlin" url="https://www.hchstudio.cn/categories/Kotlin/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.hchstudio.cn/article/2018/73dd/</loc>
     <lastmod>2018-09-22T05:47:50.686Z</lastmod>
     <data>
@@ -989,23 +943,23 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2017/2b8f/</loc>
-    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
+    <loc>https://www.hchstudio.cn/article/2017/9855/</loc>
+    <lastmod>2018-09-22T05:47:50.686Z</lastmod>
     <data>
         <display>
-        <title>FutureTask源码分析</title>
-        <pubTime>2017-04-01T15:35:54.000Z</pubTime>
+        <title>Kotlin委托</title>
+        <pubTime>2017-09-03T15:34:12.000Z</pubTime>
         
         <tag>ChanghuiN</tag>
          
-        <tag>Java</tag>
+        <tag>Android</tag>
          
-        <tag>源码解析</tag>
+        <tag>Kotlin</tag>
          
          
            
              
-              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
+              <breadCrumb title="Kotlin" url="https://www.hchstudio.cn/categories/Kotlin/"/>
           
         </display>
     </data>
@@ -1013,25 +967,21 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2018/29b5/</loc>
-    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
+    <loc>https://www.hchstudio.cn/article/2016/396e/</loc>
+    <lastmod>2018-09-22T05:47:50.686Z</lastmod>
     <data>
         <display>
-        <title>I-team博客的gitlab-runner持续集成实践</title>
-        <pubTime>2018-06-10T06:20:13.000Z</pubTime>
+        <title>Python基础(一)</title>
+        <pubTime>2016-11-27T12:41:18.000Z</pubTime>
         
         <tag>ChanghuiN</tag>
          
-        <tag>总结</tag>
-         
-        <tag>haifeiWu</tag>
-         
-        <tag>hexo</tag>
+        <tag>Python</tag>
          
          
            
              
-              <breadCrumb title="总结" url="https://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
+              <breadCrumb title="Python" url="https://www.hchstudio.cn/categories/Python/"/>
           
         </display>
     </data>
@@ -1061,21 +1011,67 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2016/e1ad/</loc>
+    <loc>https://www.hchstudio.cn/article/2016/692b/</loc>
     <lastmod>2018-09-22T05:47:50.685Z</lastmod>
     <data>
         <display>
-        <title>2016学习总结</title>
-        <pubTime>2016-12-31T11:51:49.000Z</pubTime>
+        <title>Java NIO笔记</title>
+        <pubTime>2016-10-05T02:43:55.000Z</pubTime>
         
         <tag>ChanghuiN</tag>
          
-        <tag>总结</tag>
+        <tag>Java</tag>
+         
+        <tag>学习笔记</tag>
          
          
            
              
-              <breadCrumb title="总结" url="https://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
+              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2018/e84d/</loc>
+    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
+    <data>
+        <display>
+        <title>Java命令之javap初探</title>
+        <pubTime>2018-02-26T05:22:29.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2018/cc2a/</loc>
+    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
+    <data>
+        <display>
+        <title>Java实现终止线程池中正在运行的定时任务</title>
+        <pubTime>2018-01-17T12:33:01.000Z</pubTime>
+        
+        <tag>haifeiWu</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
           
         </display>
     </data>
@@ -1098,6 +1094,28 @@
            
              
               <breadCrumb title="Android" url="https://www.hchstudio.cn/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2018/4a65/</loc>
+    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
+    <data>
+        <display>
+        <title>2017年度总结</title>
+        <pubTime>2018-01-02T13:25:43.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
+         
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="https://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -1153,6 +1171,52 @@
 
     
   <url>
+    <loc>https://www.hchstudio.cn/article/2017/2b8f/</loc>
+    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
+    <data>
+        <display>
+        <title>FutureTask源码分析</title>
+        <pubTime>2017-04-01T15:35:54.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hchstudio.cn/article/2016/e1ad/</loc>
+    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
+    <data>
+        <display>
+        <title>2016学习总结</title>
+        <pubTime>2016-12-31T11:51:49.000Z</pubTime>
+        
+        <tag>ChanghuiN</tag>
+         
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="https://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.hchstudio.cn/article/2018/2150/</loc>
     <lastmod>2018-09-22T05:47:50.685Z</lastmod>
     <data>
@@ -1177,89 +1241,25 @@
 
     
   <url>
-    <loc>https://www.hchstudio.cn/article/2016/692b/</loc>
+    <loc>https://www.hchstudio.cn/article/2018/29b5/</loc>
     <lastmod>2018-09-22T05:47:50.685Z</lastmod>
     <data>
         <display>
-        <title>Java NIO笔记</title>
-        <pubTime>2016-10-05T02:43:55.000Z</pubTime>
-        
-        <tag>ChanghuiN</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>学习笔记</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hchstudio.cn/article/2018/4a65/</loc>
-    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
-    <data>
-        <display>
-        <title>2017年度总结</title>
-        <pubTime>2018-01-02T13:25:43.000Z</pubTime>
+        <title>I-team博客的gitlab-runner持续集成实践</title>
+        <pubTime>2018-06-10T06:20:13.000Z</pubTime>
         
         <tag>ChanghuiN</tag>
          
         <tag>总结</tag>
          
+        <tag>haifeiWu</tag>
+         
+        <tag>hexo</tag>
+         
          
            
              
               <breadCrumb title="总结" url="https://www.hchstudio.cn/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hchstudio.cn/article/2018/e84d/</loc>
-    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
-    <data>
-        <display>
-        <title>Java命令之javap初探</title>
-        <pubTime>2018-02-26T05:22:29.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.hchstudio.cn/article/2018/cc2a/</loc>
-    <lastmod>2018-09-22T05:47:50.685Z</lastmod>
-    <data>
-        <display>
-        <title>Java实现终止线程池中正在运行的定时任务</title>
-        <pubTime>2018-01-17T12:33:01.000Z</pubTime>
-        
-        <tag>haifeiWu</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://www.hchstudio.cn/categories/Java/"/>
           
         </display>
     </data>
