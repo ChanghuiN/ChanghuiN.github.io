@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.hchstudio.cn/"/>
-  <updated>2021-01-15T07:10:48.102Z</updated>
+  <updated>2021-01-15T07:18:44.408Z</updated>
   <id>https://www.hchstudio.cn/</id>
   
   <author>
@@ -17,21 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Kafka的日志复制机制</title>
+    <link href="https://www.hchstudio.cn/article/2021/7cba/"/>
+    <id>https://www.hchstudio.cn/article/2021/7cba/</id>
+    <published>2021-01-14T13:25:43.000Z</published>
+    <updated>2021-01-15T07:18:44.408Z</updated>
+    
+    <content type="html"><![CDATA[<p>Kafka 是一个分布式的发布-订阅消息系统。它最初是在 LinkedIn 开发的，2011年7月成为一个 Apache 项目。今天，Kafka 被 LinkedIn、 Twitter 和 Square 用于日志聚合、队列、实时监控和事件处理等应用程序。在下面的文章中，我们将讨论下 Kafka 的 replication 设计。<br>replication 的目的是为了提供服务的高可用， 即使有些节点出现了失败，Producer可以继续发布消息，Consumer可以继续接收消息<br><a id="more"></a></p><h2 id="保证数据一致性的方式"><a href="#保证数据一致性的方式" class="headerlink" title="保证数据一致性的方式"></a>保证数据一致性的方式</h2><p>有两种典型的方式来保证数据的强一致。这两种方式都要求指定一个leader，所有的写都是发送给leader。leader负责接收所有的写请求，并以相同的顺序将这些写传播给其他follower。</p><h3 id="多数复制"><a href="#多数复制" class="headerlink" title="多数复制"></a>多数复制</h3><p>基于多数提交的方式。leader 要等到大多数 fellower 接收到数据之后才认为数据是可提交的状态。在 leader 失败的情况下，通过多数 fellower 的协调选出新的 leader 。这种方式的算法有raft、paxos等算法， 比如Zookeeper、 Google Spanner、etcd等。这种方式在有 2n + 1个节点的情况下，最多可以容忍n个节点失败。</p><h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><p>基于主从复制的方式。需要等 leader 和 fellower 都写入成功才算消息接收成功， 在有n个节点的情况下，最多可以容忍n-1节点失败。</p><p>Kafka使用的是主从复制的方式来实现集群之间的日志复制。原因如下：</p><p>基于主从复制的方式可以在相同数量的副本中容忍更多故障。 也就是说，它可以容忍带有 n + 1个副本的 n 个故障，而基于多数复制的方式通常只能容忍带有2n +1个副本的n个故障。 例如，如果只有2个副本，则基于多数复制的方式不能容忍任何故障。<br>Kafka的日志复制主要考虑的是同一个数据中心机器之间的数据复制，相对来说延迟并不会成为日志复制的瓶颈。</p><h2 id="几个概念"><a href="#几个概念" class="headerlink" title="几个概念"></a>几个概念</h2><p>在 Kafka 中，消息流是由 topic 定义的，topic被划分为一个或多个partition。而复制发生在 partition 级别，每个 partition 都有有一个或多个副本。</p><p><img src="https://img.hchstudio.cn/topic_loginc_0114.png" alt="topic的逻辑关系"></p><p><img src="https://img.hchstudio.cn/topic%20%E5%AD%98%E5%82%A8%E7%9A%84%E7%89%A9%E7%90%86%E5%85%B3%E7%B3%BB.png" alt="topic的屋里存储关系"></p><p>在 Kafka 集群中，将副本均匀地分配到不同的服broker上。每个副本都在磁盘上维护一个日志。发布的消息按顺序附加到日志中，每条消息都通过日志中的单调递增offset来标识。<br>offset 是分区中的逻辑概念。给定一个offset，可以在每个分区副本中标识相同的消息。当 consumer 订阅某个主题时，它会跟踪每个分区中用于消费的偏移量，并使用它向 broker 发出读取请求。<br><img src="https://img.hchstudio.cn/kafka_replication_diagram.png" alt=""><br>如上图所示当 producer 将消息发布到topic的某个 partition 时，该消息首先被转发到该 partition 的leader副本，并追加到其日志中。fellower 的副本不断地从 leader 那里获取新的信息。一旦有足够多的副本接收到消息，leader 就提交消息。<br>有个问题就是说 leader 如何决定到什么程度是足够的。leader 不能总是等待所有副本的写操作完成。这样为了保证数据一致性而降低我们服务的可用性是不可行的，这是因为任何跟随者副本可以失败和领导者不能无限地等待。</p><h2 id="Kafka的ISR模型"><a href="#Kafka的ISR模型" class="headerlink" title="Kafka的ISR模型"></a>Kafka的ISR模型</h2><p>为了解决上面提出的问题，Kafka采用了一种折中的方案，引入了 ISR的概念。ISR是in-sync replicas的简写。ISR的副本保持和leader的同步，当然leader本身也在ISR中。初始状态所有的副本都处于ISR中，当一个消息发送给leader的时候，leader会等待ISR中所有的副本告诉它已经接收了这个消息，如果一个副本失败了，那么它会被移除ISR。下一条消息来的时候，leader就会将消息发送给当前的ISR中节点了。</p><p>同时，leader还维护这HW(high watermark),这是一个分区的最后一条消息的offset。HW会持续的将HW发送给fellower，broker可以将它写入到磁盘中以便将来恢复。</p><p>当一个失败的副本重启的时候，它首先恢复磁盘中记录的HW，然后将它的消息同步到HW这个offset。这是因为HW之后的消息不保证已经commit。这时它变成了一个fellower， 从HW开始从Leader中同步数据，一旦追上leader，它就可以再加入到ISR中。</p><p>kafka使用Zookeeper实现leader选举。如果leader失败，controller会从ISR选出一个新的leader。leader 选举的时候可能会有数据丢失，但是committed的消息保证不会丢失。</p><p>ISR是一个概念还是一个存储模型还是什么？kafka 2.0之后是不是已经自己实现了leader选举不需要再依赖zookeeper了？</p><p>故障恢复，leader重新选举的表述~</p><h2 id="数据一致性与服务可用性的权衡"><a href="#数据一致性与服务可用性的权衡" class="headerlink" title="数据一致性与服务可用性的权衡"></a>数据一致性与服务可用性的权衡</h2><p>为了保证数据的一致性，Kafka提出了ISR，在同步日志到 fellower 的时候为了提高服务的可用性，fellow在将leader同步的日志写入内存后就返回给leader日志写入成功的标志。然后这些操作都是可以通过Kafka的配置来实现的。</p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul><li><a href="https://kafka.apache.org/documentation/#replication" target="_blank" rel="noopener"></a></li><li><a href="https://colobu.com/2017/11/02/kafka-replication/" target="_blank" rel="noopener"></a></li><li><a href="https://engineering.linkedin.com/kafka/intra-cluster-replication-apache-kafka" target="_blank" rel="noopener"></a></li><li><a href="https://cwiki.apache.org/confluence/display/KAFKA/kafka+Detailed+Replication+Design+V3" target="_blank" rel="noopener"></a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kafka 是一个分布式的发布-订阅消息系统。它最初是在 LinkedIn 开发的，2011年7月成为一个 Apache 项目。今天，Kafka 被 LinkedIn、 Twitter 和 Square 用于日志聚合、队列、实时监控和事件处理等应用程序。在下面的文章中，我们将讨论下 Kafka 的 replication 设计。&lt;br&gt;replication 的目的是为了提供服务的高可用， 即使有些节点出现了失败，Producer可以继续发布消息，Consumer可以继续接收消息&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.hchstudio.cn/categories/Java/"/>
+    
+    
+      <category term="haifeiWu" scheme="https://www.hchstudio.cn/tags/haifeiWu/"/>
+    
+      <category term="Java" scheme="https://www.hchstudio.cn/tags/Java/"/>
+    
+      <category term="Kafka" scheme="https://www.hchstudio.cn/tags/Kafka/"/>
+    
+  </entry>
+  
+  <entry>
     <title>从20到21</title>
     <link href="https://www.hchstudio.cn/article/2021/8e2f/"/>
     <id>https://www.hchstudio.cn/article/2021/8e2f/</id>
     <published>2021-01-02T13:25:43.000Z</published>
-    <updated>2021-01-15T07:10:48.102Z</updated>
+    <updated>2021-01-15T07:18:44.410Z</updated>
     
-    <content type="html"><![CDATA[<p>这一年过得不容易，记个流水账吧~</p><h2 id="一场突如其来的瘟疫"><a href="#一场突如其来的瘟疫" class="headerlink" title="一场突如其来的瘟疫"></a>一场突如其来的瘟疫</h2><p>一场突入起来的瘟疫，开启了2020年，刚开始的时候口罩都买不起了快，一时是京城口罩贵~</p><p>因为疫情宅家的小半年，倒是学着自己做了不少道菜。</p><h2 id="两个月考下来的驾照"><a href="#两个月考下来的驾照" class="headerlink" title="两个月考下来的驾照"></a>两个月考下来的驾照</h2><p>之后北京疫情缓解了的时候，就被对象催着报了考驾照的班，我这个人做什么事的时候比较拖，多亏了她~</p><p>学驾照的时候，科目二一共八个课时，硬是换了八个教练，奈何我天赋异禀，科目二科目三都是一把过。</p><h2 id="两次远行，见识了不一样的风景"><a href="#两次远行，见识了不一样的风景" class="headerlink" title="两次远行，见识了不一样的风景"></a>两次远行，见识了不一样的风景</h2><p>一次成都，一次上海。</p><p>人生第一次坐飞机，在飞机爬坡的时候心跳真的超级快，感觉要跳出来一样。</p><h2 id="两次莫名起来的车祸"><a href="#两次莫名起来的车祸" class="headerlink" title="两次莫名起来的车祸"></a>两次莫名起来的车祸</h2><p>第一场车祸，十一的时候仗着自己刚学的驾照，租了一辆车出去浪，一个不小心在变道的时候把别人的车给刮了，万幸的是租车的时候买了保险，除了交警的罚单，倒是没有什么其他损失。在这里学到好多，就是做事不能太过于循规蹈矩。再一个就是与人交流，不要太自以为是以及轻易的轻信于他人。</p><p>第二场车祸，这次是打的滴滴，我是乘客，万幸的时候人没出事，我当时直接下车就离开了，不知道滴滴师傅后来怎么样了。</p><h2 id="数十趟北京天津之间的往来"><a href="#数十趟北京天津之间的往来" class="headerlink" title="数十趟北京天津之间的往来"></a>数十趟北京天津之间的往来</h2><p>年初的时候就开始打算天津落户的事情，在落户的事差不多稳了的时候，就开始看天津的房子了，鉴于最近两年还会在北京工作就没有看市区的二手房，主要看天津环城四区的新房，应该说主要是主要看北辰跟西青的新房。</p><p>这期间还有个插曲就是之前过于着急没看清楚房子的信息，就稀里糊涂交了定金，后来又后悔退定金的问题，细节就不多说了。总的来说天津的房地产是监管还是比较严格的，让我对这个城市有了一定的好感~</p><p>这期间北京天津之间的往返没少跑，不过离得是真的近~</p><h2 id="一套上百万的房子"><a href="#一套上百万的房子" class="headerlink" title="一套上百万的房子"></a>一套上百万的房子</h2><p>在看了大半年的房子之后，在综合多方面考虑之后，定下了在天津这座城市的第一套房，也是我人生中的第一套房，一套上百万的房子，从此沦为银行的佃农。</p><p>交首付的时候，当五十多万的存款从我银行卡上一笔划走的时候，我的心里竟然没有一丝丝的波澜，镇定的像这钱从来都不属于我一样。</p><p>在这里要感谢借钱给我，助我凑够首付的每一个人，谢谢你们~</p><h2 id="2020年其他的东西"><a href="#2020年其他的东西" class="headerlink" title="2020年其他的东西"></a>2020年其他的东西</h2><p>从业三年多，2020年从一月到十二月是我第一个完整的一年一直呆在一个公司的工作，为自己的坚持鼓掌。</p><p>关于理财，2020年跟着A股的大牛市，稍稍赚了一点，没有大富大贵的命，小赚不亏就好。</p><h2 id="总结一下吧"><a href="#总结一下吧" class="headerlink" title="总结一下吧"></a>总结一下吧</h2><p>这一年是我有限人生中过得及其快速的一年，眨眼之间，真的是眨眼之间~</p><h2 id="2021年会发生什么"><a href="#2021年会发生什么" class="headerlink" title="2021年会发生什么"></a>2021年会发生什么</h2><p>2021年会发生什么，我也不知道，至于2021年自己能做成什么事，先挖个坑，到明年的这个时候再来补吧……</p><p>不过，最明显的就是2021年突然意识到自己开始奔三了要，岁月真的是把杀猪刀~</p>]]></content>
+    <content type="html"><![CDATA[<p>这一年过得不容易，记个流水账吧~<br><a id="more"></a></p><h2 id="一场突如其来的瘟疫"><a href="#一场突如其来的瘟疫" class="headerlink" title="一场突如其来的瘟疫"></a>一场突如其来的瘟疫</h2><p>一场突入起来的瘟疫，开启了2020年，刚开始的时候口罩都买不起了快，一时是京城口罩贵~</p><p>因为疫情宅家的小半年，倒是学着自己做了不少道菜。</p><h2 id="两个月考下来的驾照"><a href="#两个月考下来的驾照" class="headerlink" title="两个月考下来的驾照"></a>两个月考下来的驾照</h2><p>之后北京疫情缓解了的时候，就被对象催着报了考驾照的班，我这个人做什么事的时候比较拖，多亏了她~</p><p>学驾照的时候，科目二一共八个课时，硬是换了八个教练，奈何我天赋异禀，科目二科目三都是一把过。</p><h2 id="两次远行，见识了不一样的风景"><a href="#两次远行，见识了不一样的风景" class="headerlink" title="两次远行，见识了不一样的风景"></a>两次远行，见识了不一样的风景</h2><p>一次成都，一次上海。</p><p>人生第一次坐飞机，在飞机爬坡的时候心跳真的超级快，感觉要跳出来一样。</p><h2 id="两次莫名起来的车祸"><a href="#两次莫名起来的车祸" class="headerlink" title="两次莫名起来的车祸"></a>两次莫名起来的车祸</h2><p>第一场车祸，十一的时候仗着自己刚学的驾照，租了一辆车出去浪，一个不小心在变道的时候把别人的车给刮了，万幸的是租车的时候买了保险，除了交警的罚单，倒是没有什么其他损失。在这里学到好多，就是做事不能太过于循规蹈矩。再一个就是与人交流，不要太自以为是以及轻易的轻信于他人。</p><p>第二场车祸，这次是打的滴滴，我是乘客，万幸的时候人没出事，我当时直接下车就离开了，不知道滴滴师傅后来怎么样了。</p><h2 id="数十趟北京天津之间的往来"><a href="#数十趟北京天津之间的往来" class="headerlink" title="数十趟北京天津之间的往来"></a>数十趟北京天津之间的往来</h2><p>年初的时候就开始打算天津落户的事情，在落户的事差不多稳了的时候，就开始看天津的房子了，鉴于最近两年还会在北京工作就没有看市区的二手房，主要看天津环城四区的新房，应该说主要是主要看北辰跟西青的新房。</p><p>这期间还有个插曲就是之前过于着急没看清楚房子的信息，就稀里糊涂交了定金，后来又后悔退定金的问题，细节就不多说了。总的来说天津的房地产是监管还是比较严格的，让我对这个城市有了一定的好感~</p><p>这期间北京天津之间的往返没少跑，不过离得是真的近~</p><h2 id="一套上百万的房子"><a href="#一套上百万的房子" class="headerlink" title="一套上百万的房子"></a>一套上百万的房子</h2><p>在看了大半年的房子之后，在综合多方面考虑之后，定下了在天津这座城市的第一套房，也是我人生中的第一套房，一套上百万的房子，从此沦为银行的佃农。</p><p>交首付的时候，当五十多万的存款从我银行卡上一笔划走的时候，我的心里竟然没有一丝丝的波澜，镇定的像这钱从来都不属于我一样。</p><p>在这里要感谢借钱给我，助我凑够首付的每一个人，谢谢你们~</p><h2 id="2020年其他的东西"><a href="#2020年其他的东西" class="headerlink" title="2020年其他的东西"></a>2020年其他的东西</h2><p>从业三年多，2020年从一月到十二月是我第一个完整的一年一直呆在一个公司的工作，为自己的坚持鼓掌。</p><p>关于理财，2020年跟着A股的大牛市，稍稍赚了一点，没有大富大贵的命，小赚不亏就好。</p><h2 id="总结一下吧"><a href="#总结一下吧" class="headerlink" title="总结一下吧"></a>总结一下吧</h2><p>这一年是我有限人生中过得及其快速的一年，眨眼之间，真的是眨眼之间~</p><h2 id="2021年会发生什么"><a href="#2021年会发生什么" class="headerlink" title="2021年会发生什么"></a>2021年会发生什么</h2><p>2021年会发生什么，我也不知道，至于2021年自己能做成什么事，先挖个坑，到明年的这个时候再来补吧……</p><p>不过，最明显的就是2021年突然意识到自己开始奔三了要，岁月真的是把杀猪刀~</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;这一年过得不容易，记个流水账吧~&lt;/p&gt;
-&lt;h2 id=&quot;一场突如其来的瘟疫&quot;&gt;&lt;a href=&quot;#一场突如其来的瘟疫&quot; class=&quot;headerlink&quot; title=&quot;一场突如其来的瘟疫&quot;&gt;&lt;/a&gt;一场突如其来的瘟疫&lt;/h2&gt;&lt;p&gt;一场突入起来的瘟疫，开启了2020年
-      
+      &lt;p&gt;这一年过得不容易，记个流水账吧~&lt;br&gt;
     
     </summary>
     
@@ -456,30 +478,6 @@
     <summary type="html">
     
       String 在 Java 中是不可变的。 不可变类只是一个无法修改其实例的类。 创建实例时，将初始化实例中的所有信息，并且无法修改信息。
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.hchstudio.cn/categories/Java/"/>
-    
-    
-      <category term="haifeiWu" scheme="https://www.hchstudio.cn/tags/haifeiWu/"/>
-    
-      <category term="Java" scheme="https://www.hchstudio.cn/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>双重检查锁定与单例</title>
-    <link href="https://www.hchstudio.cn/article/2019/2b9/"/>
-    <id>https://www.hchstudio.cn/article/2019/2b9/</id>
-    <published>2019-07-02T00:35:52.000Z</published>
-    <updated>2019-07-09T02:10:08.918Z</updated>
-    
-    <content type="html"><![CDATA[<p>对于单例模式，相信大多数人都可以写出好几种实现方法，懒汉，饿汉等等，然而小小单例真要写好，写的完全正确也并非易事。</p><h2 id="双重检查锁的单例"><a href="#双重检查锁的单例" class="headerlink" title="双重检查锁的单例"></a>双重检查锁的单例</h2><p>下面是我们经常使用的一种单例的实现，也就是双重检查所的实现方案。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == instance) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">null</span> == instance) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();   <span class="comment">// error</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueSingleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>让我们来看一下这个代码是如何工作的：首先当一个线程发出请求后，会先检查instance是否为null，如果不是则直接返回其内容，这样避免了进入synchronized块所需要花费的资源。其次，如果两个线程同时进入了第一个if判断，那么他们也必须按照顺序执行 synchronized 块中的代码，第一个进入代码块的线程会创建一个新的 Singleton 实例，而后续的线程则因为无法通过if判断，而不会创建多余的实例。</p><p>但还有一个问题，在有些情况下，通过这种方式拿到的Singleton对象，可能是错误的 。</p><p>回顾我们new对象的3个步骤</p><ul><li><p>1，分配内存空间</p></li><li><p>2，初始化对象</p></li><li><p>3，将对象指向刚分配的内存空间</p></li></ul><p>但jvm在指令优化时，会出现步骤2和3对调的情况，比如线程1在经过俩层为 null 判断后，进入 new 的动作，在还没有初始化对象时，就返加了地址值，线程2在第一个为 null 判断时，因为对象已经不为空，那么就直接返回了对象。然而当线程2打算使用Singleton实例，却发现它没有被初始化，于是错误发生了。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>对于上面的问题，有两种解决方案</p><p><strong>1，使用 volatile 关键词主要可以保证代码的执行顺序不受 jvm 重排序影响。</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == instance) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">null</span> == instance) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();   <span class="comment">// error</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>2，通过内部类实现多线程环境中的单例模式。</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;        </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;       </span><br><span class="line">    &#125;        </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonContainer</span> </span>&#123;        </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();        </span><br><span class="line">    &#125;        </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;        </span><br><span class="line">        <span class="keyword">return</span> SingletonContainer.instance;        </span><br><span class="line">    &#125;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      对于单例模式，相信大多数人都可以写出好几种实现方法，懒汉，饿汉等等，然而小小单例真要写好，写的完全正确也并非易事。
     
     </summary>
     
